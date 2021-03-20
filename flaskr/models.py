@@ -6,7 +6,7 @@ import json
 
 
 database_name = "plants"
-database_path = "postgres://{}:{}@{}/{}".format('postgres','postgres_me','localhost:5432', 'plants')
+database_path = "postgresql://{}:{}@{}/{}".format('postgres','postgres_me','localhost:5432', 'plants')
 
 db = SQLAlchemy()
 
@@ -23,7 +23,7 @@ class Plant(db.Model):
   id = Column(Integer, primary_key=True)
   name = Column(String)
   scientific_name = Column(String)
-  is_piosonous = Column(Boolean)
+  is_poisonous = Column(Boolean)
   primary_color = Column(String)
 
   def __init__(self, name, scientific_name, is_poisonous, primary_color):
